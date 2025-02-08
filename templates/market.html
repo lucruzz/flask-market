@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Market Page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <table class="table">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">ID</th>
+              <th scope="col">Product</th>
+              <th scope="col">Code</th>
+              <th scope="col">Price</th>
+              <th scope="col">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+                <tr>
+                  <th scope="row">{{ product.id }}</th>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.code }}</td>
+                  <td>{{ product.price }}</td>
+                  <td>
+                      <button class="btn btn-info">More info</button>
+                      <button class="btn btn-success">Purchase</button>
+                  </td>
+                </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    </div>
+{% endblock %}

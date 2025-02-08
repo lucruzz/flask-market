@@ -1,9 +1,11 @@
 from flask import Flask
+from configuration import configure_all
+
+# inicialização
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+configure_all(app)
 
+# execução
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
